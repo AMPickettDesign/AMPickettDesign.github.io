@@ -1,6 +1,8 @@
+import { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import Lottie from 'lottie-react';
+import sparklesAnimation from '../assets/sparkles-animation.json';
 import { useScrollProgress } from '../hooks/useScrollProgress';
-import { FloatingSparkle } from './Decorations';
 
 const fadeUp = {
   hidden: { opacity: 0, y: 40 },
@@ -13,15 +15,35 @@ const fadeUp = {
 
 export default function Hero() {
   const { scrollY } = useScrollProgress();
+  const lottieRef = useRef(null);
+
+  useEffect(() => {
+    if (lottieRef.current) {
+      lottieRef.current.setSpeed(0.4);
+    }
+  }, []);
   const heroProgress = Math.min(scrollY / (typeof window !== 'undefined' ? window.innerHeight * 0.5 : 600), 1);
 
   return (
     <header className="hero" id="hero">
-      {/* Floating decorative sparkles */}
-      <FloatingSparkle size={40} color="var(--color-accent-light)" style={{ top: '18%', right: '15%' }} delay={0.5} />
-      <FloatingSparkle size={24} color="var(--color-purple-light)" style={{ top: '35%', right: '8%' }} delay={0.8} />
-      <FloatingSparkle size={18} color="var(--color-accent)" style={{ bottom: '30%', right: '22%' }} delay={1.1} />
-      <FloatingSparkle size={28} color="var(--color-accent-subtle)" style={{ top: '60%', left: '5%' }} delay={0.9} />
+      <div className="hero__visual" aria-hidden="true" style={{ opacity: 0.50 * (1 - heroProgress) }}>
+        <Lottie
+          lottieRef={lottieRef}
+          animationData={sparklesAnimation}
+          loop
+          autoplay
+          className="hero__lottie"
+          rendererSettings={{
+            preserveAspectRatio: 'xMidYMid slice',
+          }}
+          style={{
+            width: '100%',
+            height: '100%',
+            transform: 'rotate(90deg) scale(0.5)',
+            transformOrigin: 'center center',
+          }}
+        />
+      </div>
 
       <div className="hero__container">
         <motion.div
@@ -54,11 +76,6 @@ export default function Hero() {
             <a href="#contact" className="btn btn--outline" onClick={(e) => { e.preventDefault(); document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' }); }}>Get in Touch</a>
           </motion.div>
         </motion.div>
-        <div className="hero__visual" aria-hidden="true">
-          <div className="hero__shape" style={{ transform: `translateY(${scrollY * 0.1}px)` }} />
-          <div className="hero__shape hero__shape--2" style={{ transform: `translateY(${scrollY * 0.18}px)` }} />
-          <div className="hero__shape hero__shape--3" style={{ transform: `translateY(${scrollY * 0.26}px)` }} />
-        </div>
       </div>
     </header>
   );

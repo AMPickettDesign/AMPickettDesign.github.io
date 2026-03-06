@@ -1,7 +1,7 @@
 export const projects = [
   {
     id: 1,
-    category: 'personal',
+    categories: ['uxui', 'personal'],
     tag: 'UX/UI Design',
     title: 'MyShield',
     description: 'A safety app designed for high-stress situations. Features SOS alerts, fake calls, video recording, location sharing, and a discreet mode — all built around quick access and clear usability when it matters most.',
@@ -10,7 +10,7 @@ export const projects = [
   },
   {
     id: 2,
-    category: 'personal',
+    categories: ['uxui', 'personal'],
     tag: 'UX/UI Design',
     title: 'The Sweet Spot',
     description: 'A bakery and drinks ordering app with themed flavor interfaces, full sign-up flow, and category browsing for pies, cakes, drinks, cupcakes, and sweet breads. Designed with a complete color system and multiple visual themes.',
@@ -19,7 +19,7 @@ export const projects = [
   },
   {
     id: 3,
-    category: 'personal',
+    categories: ['uxui', 'personal'],
     tag: 'UX/UI Design',
     title: 'Virtual Pet',
     description: 'An Apple Watch virtual pet app inspired by Tamagotchi. Hand-redrawn pixel character faces and interactions for a Stardew Valley-themed experience, using purchased asset packs customized frame by frame.',
@@ -28,7 +28,7 @@ export const projects = [
   },
   {
     id: 4,
-    category: 'group',
+    categories: ['uxui'],
     tag: 'UX/UI Design · Group',
     title: 'Klean House Project',
     description: 'A mobile app built around the UN\'s sustainability goal of responsible consumption and production. Designed collaboratively in a team of 4-5 to promote cleaner living habits.',
@@ -37,7 +37,7 @@ export const projects = [
   },
   {
     id: 5,
-    category: 'group',
+    categories: ['uxui'],
     tag: 'UX/UI Design · Group',
     title: 'Design Library',
     description: 'A learning app designed to teach people different design skills. A straightforward, educational interface focused on making design knowledge accessible.',
@@ -46,7 +46,7 @@ export const projects = [
   },
   {
     id: 6,
-    category: 'design',
+    categories: ['design'],
     tag: 'Graphic Design',
     title: 'More Work Coming Soon',
     description: 'Graphic design projects including branding, print, and visual identity work will be added here.',
@@ -82,9 +82,9 @@ export const processSteps = [
 
 export const filters = [
   { key: 'all', label: 'All' },
-  { key: 'personal', label: 'Personal Projects' },
-  { key: 'group', label: 'Group Projects' },
+  { key: 'uxui', label: 'UX/UI' },
   { key: 'design', label: 'Graphic Design' },
+  { key: 'personal', label: 'Personal Projects' },
 ];
 
 export const navSections = [
