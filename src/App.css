@@ -151,12 +151,12 @@
   }
 
   .scroll-cat__platform {
-    width: 55px;
+    width: 60px;
   }
 
   .scroll-cat__cat {
-    transform: scale(0.75);
-    transform-origin: bottom center;
+    right: 5px;
+    width: 60px;
   }
 
   .scroll-cat__bar-label {
