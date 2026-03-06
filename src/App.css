@@ -127,7 +127,7 @@
 /* The cat — positioned so its feet sit on the bar line */
 .scroll-cat__cat {
   position: absolute;
-  right: 5px;
+  right: 0;
   width: 70px;
   display: flex;
   align-items: flex-end;
@@ -155,7 +155,7 @@
   }
 
   .scroll-cat__cat {
-    right: 5px;
+    right: 0;
     width: 60px;
   }
 
