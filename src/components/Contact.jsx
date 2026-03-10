@@ -59,6 +59,10 @@ export default function Contact() {
                   <span className="contact__link-label">Location</span>
                   <span>Spokane, WA</span>
                 </span>
+                <a href="https://github.com/AMPickettDesign" target="_blank" rel="noopener noreferrer" className="contact__link">
+                  <span className="contact__link-label">GitHub</span>
+                  <span>AMPickettDesign</span>
+                </a>
               </div>
             </div>
           </ScrollReveal>

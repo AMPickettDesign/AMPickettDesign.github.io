@@ -46,6 +46,15 @@ export const projects = [
   },
   {
     id: 6,
+    categories: ['uxui', 'personal'],
+    tag: 'UX/UI Design · Personal',
+    title: 'Triur.ai',
+    description: 'A personal AI companion desktop app with three evolving personalities — Abi, David, and Quinn. Features emotional memory, personality growth, animated sprites, and a glassmorphism UI. Built with Electron, Python, and Ollama.',
+    gradient: 'linear-gradient(135deg, #2c1f40, #367074)',
+    link: 'https://github.com/AMPickettDesign/Triur.ai',
+  },
+  {
+    id: 7,
     categories: ['design'],
     tag: 'Graphic Design',
     title: 'More Work Coming Soon',
