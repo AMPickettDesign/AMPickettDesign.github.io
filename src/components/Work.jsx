@@ -51,11 +51,34 @@ export default function Work() {
                     className="project-card__placeholder"
                     style={{ background: project.gradient }}
                   >
-                    <span>{project.link ? 'Project Image' : 'Coming Soon'}</span>
+                    <span>{project.link || project.buttons ? 'Project Image' : 'Coming Soon'}</span>
                   </div>
-                  {project.link && (
+                  {(project.link || project.buttons) && (
                     <div className="project-card__overlay">
-                      <a href={project.link} className="btn btn--small">View Project</a>
+                      {project.buttons ? (
+                        <div className="project-card__buttons">
+                          {project.buttons.map((btn, i) => (
+                            <a
+                              key={i}
+                              href={btn.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className={`btn btn--small ${btn.style === 'primary' ? 'btn--primary' : 'btn--secondary'} ${btn.comingSoon ? 'btn--coming-soon' : ''}`}
+                            >
+                              {btn.label}
+                            </a>
+                          ))}
+                        </div>
+                      ) : (
+                        <a
+                          href={project.link}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="btn btn--small"
+                        >
+                          View Project
+                        </a>
+                      )}
                     </div>
                   )}
                 </div>

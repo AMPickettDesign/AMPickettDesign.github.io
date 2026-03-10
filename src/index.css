@@ -227,6 +227,40 @@ select {
   color: #fff;
 }
 
+.project-card__buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-items: center;
+  width: 100%;
+}
+
+.btn--primary {
+  background: rgba(255, 255, 255, 0.95);
+  color: #1a1a1a;
+}
+
+.btn--secondary {
+  background: transparent;
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.7);
+}
+
+.btn--secondary:hover {
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.btn--coming-soon {
+  opacity: 0.7;
+  cursor: default;
+  pointer-events: none;
+}
+
+.btn--coming-soon::after {
+  content: ' \1F512';
+  font-size: 0.7em;
+}
+
 .btn--full {
   width: 100%;
 }
